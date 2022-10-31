@@ -18,19 +18,32 @@ class Builder():
         with open(f"{self.source_root}/colors.txt") as _colors:
             background_buttons = []
             background_styles = []
+            foreground_strings = []
+
             for line in _colors.readlines():
                 line_parts = line.strip().split("\t")
                 background_buttons.append(
                     f"""<button 
-                    id="code--{line_parts[0]}" 
+                    id="bg-code--{line_parts[0]}" 
                     class="bg-button"
                     data-number="{line_parts[0]}"
                     data-name="{line_parts[1]}"
                     data-color="{line_parts[2]}"
                     ></button>"""
                 )
+                foreground_strings.append(
+                    f"""<button
+                    id="fg-code--{line_parts[0]}" 
+                    class="fg-button"
+                    style="color: {line_parts[2]};"
+                    data-number="{line_parts[0]}"
+                    data-name="{line_parts[1]}"
+                    data-color="{line_parts[2]}"
+                    >{line_parts[0].rjust(3, 'x').replace('x', '&nbsp;')}</button>"""
+                )
+
                 background_styles.append(
-                    "#code--" + line_parts[0] + " { " +
+                    "#bg-code--" + line_parts[0] + " { " +
                     "background-color: " + line_parts[2] +
                     " }\n"
                 )
@@ -44,6 +57,9 @@ class Builder():
 
             self.parts['BACKGROUND_STYLES'] = "".join(background_styles)
             self.parts['BACKGROUND_BUTTONS'] = "".join(background_buttons)
+
+            self.parts['FOREGROUND_STRINGS'] = "".join(foreground_strings)
+
 
     def load_template(self):
         with open(f"{self.source_root}/TEMPLATE.html") as _template:
