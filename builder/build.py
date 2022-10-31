@@ -21,7 +21,13 @@ class Builder():
             for line in _colors.readlines():
                 line_parts = line.strip().split("\t")
                 background_buttons.append(
-                    f"""<button id="code--{line_parts[0]}" class="bg-button"></button>"""
+                    f"""<button 
+                    id="code--{line_parts[0]}" 
+                    class="bg-button"
+                    data-number="{line_parts[0]}"
+                    data-name="{line_parts[1]}"
+                    data-color="{line_parts[2]}"
+                    ></button>"""
                 )
                 background_styles.append(
                     "#code--" + line_parts[0] + " { " +
