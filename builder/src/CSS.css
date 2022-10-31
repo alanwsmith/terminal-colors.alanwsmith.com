@@ -70,9 +70,11 @@ footer {
 #terminal {
       padding: 6px;
       background-color: black;
+      margin-right: 6px;
+      margin-top: 0;
 }
 
 #picker-wrapper {
       display: grid;
-      grid-template-columns: 50% 50%;
+      grid-template-columns: 42% 29% 29%;
 }
