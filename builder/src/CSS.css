@@ -68,7 +68,7 @@ footer {
 }
 
 #terminal {
-      padding: 6px;
+      padding: 4px;
       background-color: black;
       margin-right: 6px;
       margin-top: 0;
@@ -76,5 +76,5 @@ footer {
 
 #picker-wrapper {
       display: grid;
-      grid-template-columns: 42% 29% 29%;
+      grid-template-columns: 29% 42% 29%;
 }

@@ -28,7 +28,7 @@ class Builder():
                     class="bg-button"
                     data-number="{line_parts[0]}"
                     data-name="{line_parts[1]}"
-                    data-color="{line_parts[2]}"
+                    data-hex="{line_parts[2]}"
                     ></button>"""
                 )
                 foreground_strings.append(
@@ -38,7 +38,7 @@ class Builder():
                     style="color: {line_parts[2]};"
                     data-number="{line_parts[0]}"
                     data-name="{line_parts[1]}"
-                    data-color="{line_parts[2]}"
+                    data-hex="{line_parts[2]}"
                     >{line_parts[0].rjust(3, 'x').replace('x', '&nbsp;')}</button>"""
                 )
 
