@@ -9,6 +9,6 @@ BUILD_SCRIPT="$SCRIPT_DIR/build.py"
 # "${THE_COMMAND[@]}"
 
 
-fswatch -o -r "$SOURCE_DIR" | xargs -I{} "$BUILD_SCRIPT"
+fswatch -o -1 0.1 -r "$SOURCE_DIR" "$BUILD_SCRIPT" | xargs -I{} "$BUILD_SCRIPT"
 
 

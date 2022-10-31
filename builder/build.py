@@ -2,6 +2,7 @@
 
 import os
 
+from datetime import datetime
 from string import Template
 
 class Builder():
@@ -49,4 +50,4 @@ if __name__ == "__main__":
         b.parts
     )
 
-    print("HERE")
+    print(f"## Completed Build: {datetime.now()}")
