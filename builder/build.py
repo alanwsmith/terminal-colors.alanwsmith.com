@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import json
 import os
 
 from datetime import datetime
@@ -11,13 +12,41 @@ class Builder():
         self.source_root = f"{self.project_root}/builder/src"
         self.site_root = f"{self.project_root}/site"
         self.parts = {}
+        self.colors = []
+
+    def get_colors(self):
+        with open(f"{self.source_root}/colors.txt") as _colors:
+            background_buttons = []
+            background_styles = []
+            for line in _colors.readlines():
+                line_parts = line.strip().split("\t")
+                background_buttons.append(
+                    f"""<button id="code--{line_parts[0]}" class="bg-button"></button>"""
+                )
+                background_styles.append(
+                    "#code--" + line_parts[0] + " { " +
+                    "background-color: " + line_parts[2] +
+                    " }\n"
+                )
+
+                self.colors.append({
+                    "number": line_parts[0],
+                    "name": line_parts[1],
+                    "hex": line_parts[2]
+                })
+            # self.parts['COLORS'] = json.dumps(self.colors)
+
+            self.parts['BACKGROUND_STYLES'] = "".join(background_styles)
+            self.parts['BACKGROUND_BUTTONS'] = "".join(background_buttons)
 
     def load_template(self):
         with open(f"{self.source_root}/TEMPLATE.html") as _template:
             self.template = _template.read()
 
-    def load_content(self):
-        self.parts['CONTENT'] = "the quick brown fox"
+    def build_content(self):
+        # Make dynamic content here
+        # self.parts['CONTENT'] = "the quick brown fox"
+        pass
 
     def load_parts(self):
         for file_part in self.file_parts:
@@ -37,13 +66,13 @@ class Builder():
                     template.substitute(data)
                 )
 
-
 if __name__ == "__main__":
     b = Builder()
+    b.get_colors()
     b.load_template()
-    b.file_parts = ['CSS.css', 'JS.js']
+    b.file_parts = ['HEAD.html', 'BODY.html', 'CSS.css', 'JS.js']
     b.load_parts()
-    b.load_content()
+    b.build_content()
     b.make_page(
         f"{b.source_root}/TEMPLATE.html",
         f"{b.site_root}/index.html",

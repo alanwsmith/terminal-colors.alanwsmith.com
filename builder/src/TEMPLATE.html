@@ -28,54 +28,20 @@
       sizes="180x180"
       href="/favicons/180x180.png"
     />
-
     <style>
-      body {
-        background-color: #000000;
-        color: #b8c1ec;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: #fffffe;
-      }
-      a {
-        text-decoration: none;
-      }
-      header {
-        padding-top: 18px;
-        padding-bottom: 4px;
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-        border-bottom: 1px solid #888;
-      }
-      main {
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-      }
-      footer {
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 60px;
-        padding-bottom: 12px;
-        font-size: 0.9rem;
-      }
+      /*
+            *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+            */
+
+
+
+
+                  $BACKGROUND_STYLES
+
+                        $CSS
     </style>
     <script>
-      const kickoff = () => {}
-      document.addEventListener('DOMContentLoaded', kickoff)
+      $JS
     </script>
   </head>
   <body>
@@ -87,8 +53,8 @@
     </header>
     <main>
       <h1>Terminal Color Picker</h1>
-      <hr />
-      $CONTENT
+      $BODY
+      <div id="background-button-wrapper">$BACKGROUND_BUTTONS</div>
     </main>
     <footer>
       made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
