@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terminal Color Picker</title>
+    <title>Alan's Terminal Color Picker</title>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Terminal Color Picker" />
+    <meta property="og:title" content="Alan's Terminal Color Picker" />
     <meta
       property="og:description"
       content="A color picker that shows you background and foreground on the same line so you can see how things will really look"
@@ -29,8 +29,11 @@
       href="/favicons/180x180.png"
     />
     <style>
-      *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
-            #bg-code--0 { background-color: #000000 }
+      /*
+            *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+            */
+                  #bg-code--0 { background-color: #000000 }
 #bg-code--1 { background-color: #800000 }
 #bg-code--2 { background-color: #008000 }
 #bg-code--3 { background-color: #808000 }
@@ -287,8 +290,8 @@
 #bg-code--254 { background-color: #e4e4e4 }
 #bg-code--255 { background-color: #eeeeee }
 
-                  body {
-      background-color: #111111;
+                        body {
+      background-color: #333;
       color: #123433;
       margin: 0;
       padding: 0;
@@ -332,21 +335,22 @@ footer {
 }
 
 .fg-button {
-      width: 30px;
-      height: 26px;
+      width: 40px;
+      height: 32px;
       padding: 0px;
-      margin: 2px;
-      border: 1px solid #333333;
-      font-size: 0.9rem;
-      background-color: #111;
+      margin: 1px;
+      border: 1px solid #111;
+      font-size: 1rem;
+      background-color: #2c2c2c;
       font-family: monospace;
+      font-weight: bold;
 }
 
 .bg-button {
-      width: 32px;
-      height: 26px;
+      width: 40px;
+      height: 32px;
       padding: 0px;
-      margin: 2px;
+      margin: 1px;
       border: 1px solid #666666;
       font-size: 0.9rem;
 }
@@ -356,35 +360,40 @@ footer {
       flex-wrap: wrap;
 }
 
-#terminal {
-      padding: 4px;
+.terminal {
+      border-radius: 10px;
+      padding: 6px;
       background-color: black;
-      margin-right: 6px;
-      margin-top: 0;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 42px;
+      margin-top: 2px;
 }
 
 #picker-wrapper {
       display: grid;
-      grid-template-columns: 29% 42% 29%;
+      grid-template-columns: 28% 44% 28%;
+}
+
+#terminal-wrapper {
+      margin: 0;
+      padding: 0;
 }
 
     </style>
     <script>
       const colors = {
     fg: {
-        number: 1,
-        hex: '#ffffff',
-        name: 'NAME',
+        number: 37,
+        hex: '#00afaf',
+        name: 'LightSeaGreen',
     },
-    bg: { number: 0, hex: '#000000', name: 'NAME' },
+    bg: { number: 0, hex: '#000000', name: 'Black (SYSTEM)' },
 }
 
 const loadText = () => {
-    const theTerminal = document.getElementById('terminal')
-    theTerminal.style.backgroundColor = colors.bg.hex
-    theTerminal.style.color = colors.fg.hex
-
-    let newTextBlock = `DETAILS
+    const newTextBlocks = [
+        `DETAILS
 
 Guess the results from the first scores.
 
@@ -392,45 +401,39 @@ A salt pickle tastes fine with ham.
 These thistles bend in a high wind.
 
 The tree top waved in a graceful way.
+>`,
 
-The cigar burned a hole in the desk top.
-He broke a new shoelace that day.
+        `DETAILS
 
 The coffee stand is too high for the couch.
 The urge to write short stories is rare.
 
 The pencils have all been used.
 
-DETAILS
-
 The sofa cushion is red and of light weight.
+>`,
+
+        `DETAILS
 
 At that high level the air is pure.
 The office paint was a dull sad tan.
-Steam hissed from the broken valve.
 
+Steam hissed from the broken valve.
 There was a sound of dry leaves outside.
 Torn scraps littered the stone floor.
+>`,
+
+        `DETAILS
 
 We admire and love a good cook.
 Corn cobs can be used to kindle a fire.
-
-DETAILS
-
 Where were they when the noise started.
+
 The paper box is full of thumb tacks.
 
-The petals fall with the next puff of wind.
+>`,
 
-Bring your best compass to the third class.
-A fresh start will work such wonders.
-He wrote his last novel there at the inn.
-
-It is hard to erase blue or red ink.
-
-Write at once or you may forget it.
-
-DETAILS
+        `DETAILS
 
 The doorknob was made of bright clean brass.
 
@@ -438,18 +441,53 @@ They took the axe and the saw to the forest.
 Jazz and swing fans like fast music.
 
 The map had an X that meant nothing.
-`
+>`,
 
-    const detailsBlock = `--------------------------------------------
-BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
-FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}
---------------------------------------------`
+        `DETAILS
 
-    newTextBlock = newTextBlock.replaceAll(/DETAILS/g, detailsBlock)
+A fresh start will work such wonders.
 
-    document.getElementById('the-text').innerText = newTextBlock
-    document.getElementById('terminal').style.backgroundColor = colors.bg.hex
-    console.log(colors)
+He wrote his last novel there at the inn.
+It is hard to erase blue or red ink.
+
+Write at once or you may forget it.
+>`,
+
+        `DETAILS
+Some ads serve to cheat buyers.
+
+On the islands the sea breeze is soft and mild.
+
+Add salt before you fry the egg.
+The houses are built of red clay bricks.
+
+>`,
+
+        `DETAILS
+Ducks fly north but lack a compass.
+>`,
+    ]
+
+    const detailsBlock = `BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
+FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
+
+    newTextBlocks.forEach((block, blockIndex) => {
+        block = block.replaceAll(/DETAILS/g, detailsBlock)
+        const theTerminal = document.getElementById(`terminal-${blockIndex}`)
+        console.log(theTerminal)
+        const theText = document.getElementById(`the-text-${blockIndex}`)
+
+        theTerminal.style.backgroundColor = colors.bg.hex
+        theTerminal.style.color = colors.fg.hex
+        theText.innerText = block
+
+        console.log(blockIndex)
+    })
+
+    // document.getElementById('terminal').style.backgroundColor = colors.bg.hex
+    // document.getElementById('terminal').style.color = colors.fg.hex
+
+    // console.log(colors)
 }
 
 const handleBgButtonClick = (event) => {
@@ -457,14 +495,15 @@ const handleBgButtonClick = (event) => {
     colors.bg.number = theButton.dataset.number
     colors.bg.hex = theButton.dataset.hex
     colors.bg.name = theButton.dataset.name
-    // document.getElementById('terminal').style.backgroundColor =
-    //   theButton.dataset.hex
     loadText()
 }
 
 const handleFgButtonClick = (event) => {
     const theButton = event.target
-    document.getElementById('terminal').style.color = theButton.dataset.color
+    colors.fg.number = theButton.dataset.number
+    colors.fg.hex = theButton.dataset.hex
+    colors.fg.name = theButton.dataset.name
+    loadText()
 }
 
 const init = () => {
@@ -489,7 +528,7 @@ document.addEventListener('DOMContentLoaded', init)
       <a href="https://podcast.alanwsmith.com/">podcast</a>
     </header>
     <main>
-      <h1>Terminal Color Picker</h1>
+      <h1>Alan's Terminal Color Picker</h1>
       <p>
   GOAL: Make a color picker for terminals that shows both the forground and
   background colors
@@ -2033,8 +2072,39 @@ document.addEventListener('DOMContentLoaded', init)
                     data-name="Grey93"
                     data-hex="#eeeeee"
                     ></button></div>
-        <div>
-          <pre id="terminal"><code id="the-text"></code></pre>
+        <div id="terminal-wrapper">
+          <pre
+            id="terminal-0"
+            class="terminal"
+          ><code id="the-text-0"></code></pre>
+          <pre
+            id="terminal-1"
+            class="terminal"
+          ><code id="the-text-1"></code></pre>
+          <pre
+            id="terminal-2"
+            class="terminal"
+          ><code id="the-text-2"></code></pre>
+          <pre
+            id="terminal-3"
+            class="terminal"
+          ><code id="the-text-3"></code></pre>
+          <pre
+            id="terminal-4"
+            class="terminal"
+          ><code id="the-text-4"></code></pre>
+          <pre
+            id="terminal-5"
+            class="terminal"
+          ><code id="the-text-5"></code></pre>
+          <pre
+            id="terminal-6"
+            class="terminal"
+          ><code id="the-text-6"></code></pre>
+          <pre
+            id="terminal-7"
+            class="terminal"
+          ><code id="the-text-7"></code></pre>
         </div>
         <div id="foreground-string-wrapper"><button
                     id="fg-code--0" 

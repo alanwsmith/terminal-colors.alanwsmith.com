@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terminal Color Picker</title>
+    <title>Alan's Terminal Color Picker</title>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Terminal Color Picker" />
+    <meta property="og:title" content="Alan's Terminal Color Picker" />
     <meta
       property="og:description"
       content="A color picker that shows you background and foreground on the same line so you can see how things will really look"
@@ -29,9 +29,12 @@
       href="/favicons/180x180.png"
     />
     <style>
-      *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
-            $BACKGROUND_STYLES
-                  $CSS
+      /*
+            *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+            */
+                  $BACKGROUND_STYLES
+                        $CSS
     </style>
     <script>
       $JS
@@ -45,12 +48,43 @@
       <a href="https://podcast.alanwsmith.com/">podcast</a>
     </header>
     <main>
-      <h1>Terminal Color Picker</h1>
+      <h1>Alan's Terminal Color Picker</h1>
       $BODY
       <div id="picker-wrapper">
         <div id="background-button-wrapper">$BACKGROUND_BUTTONS</div>
-        <div>
-          <pre id="terminal"><code id="the-text"></code></pre>
+        <div id="terminal-wrapper">
+          <pre
+            id="terminal-0"
+            class="terminal"
+          ><code id="the-text-0"></code></pre>
+          <pre
+            id="terminal-1"
+            class="terminal"
+          ><code id="the-text-1"></code></pre>
+          <pre
+            id="terminal-2"
+            class="terminal"
+          ><code id="the-text-2"></code></pre>
+          <pre
+            id="terminal-3"
+            class="terminal"
+          ><code id="the-text-3"></code></pre>
+          <pre
+            id="terminal-4"
+            class="terminal"
+          ><code id="the-text-4"></code></pre>
+          <pre
+            id="terminal-5"
+            class="terminal"
+          ><code id="the-text-5"></code></pre>
+          <pre
+            id="terminal-6"
+            class="terminal"
+          ><code id="the-text-6"></code></pre>
+          <pre
+            id="terminal-7"
+            class="terminal"
+          ><code id="the-text-7"></code></pre>
         </div>
         <div id="foreground-string-wrapper">$FOREGROUND_STRINGS</div>
       </div>
