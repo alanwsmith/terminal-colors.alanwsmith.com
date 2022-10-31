@@ -12,49 +12,44 @@ const loadText = () => {
         `DETAILS
 
 Guess the results from the first scores.
+Ducks fly north but lack a compass.
 
 A salt pickle tastes fine with ham.
 These thistles bend in a high wind.
 
 The tree top waved in a graceful way.
->`,
-
-        `DETAILS
-
 The coffee stand is too high for the couch.
 The urge to write short stories is rare.
 
 The pencils have all been used.
-
-The sofa cushion is red and of light weight.
 >`,
 
         `DETAILS
 
+The sofa cushion is red and of light weight.
 At that high level the air is pure.
 The office paint was a dull sad tan.
 
 Steam hissed from the broken valve.
-There was a sound of dry leaves outside.
+
 Torn scraps littered the stone floor.
+Where were they when the noise started.
+
+The paper box is full of thumb tacks.
+The long journey home took a year.
 >`,
 
         `DETAILS
 
 We admire and love a good cook.
+
 Corn cobs can be used to kindle a fire.
-Where were they when the noise started.
+There was a sound of dry leaves outside.
 
-The paper box is full of thumb tacks.
-
->`,
-
-        `DETAILS
-
+Jazz and swing fans like fast music.
 The doorknob was made of bright clean brass.
 
 They took the axe and the saw to the forest.
-Jazz and swing fans like fast music.
 
 The map had an X that meant nothing.
 >`,
@@ -65,22 +60,42 @@ A fresh start will work such wonders.
 
 He wrote his last novel there at the inn.
 It is hard to erase blue or red ink.
+The grass and bushes were wet with dew.
 
 Write at once or you may forget it.
->`,
-
-        `DETAILS
 Some ads serve to cheat buyers.
-
-On the islands the sea breeze is soft and mild.
-
-Add salt before you fry the egg.
 The houses are built of red clay bricks.
 
+Add salt before you fry the egg.
 >`,
 
         `DETAILS
-Ducks fly north but lack a compass.
+
+Cut the cord that binds the box tightly.
+Look in the corner to find the tan shirt.
+The flint sputtered and lit a pine torch.
+
+Quench your thirst, then eat the crackers.
+The mute muffled the high tones of the horn.
+
+The node on the stalk of wheat grew daily.
+
+The heap of fallen leaves was set on fire.
+Write fast, if you want to finish early.
+>`,
+
+        `DETAILS
+
+The last switch cannot be turned off.
+The rise to fame of a person takes luck.
+
+The purple tie was ten years old.
+Pack the records in a neat thin case.
+
+The copper bowl shone in the sun's rays.
+
+Boards will warp unless kept dry.
+The plush chair leaned against the wall.
 >`,
     ]
 

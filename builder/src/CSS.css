@@ -44,28 +44,25 @@ footer {
 
 .fg-button {
       width: 40px;
-      height: 32px;
+      height: 38px;
       padding: 0px;
       margin: 1px;
       border: 1px solid #111;
-      font-size: 1rem;
       background-color: #2c2c2c;
+      font-size: 1rem;
       font-family: monospace;
       font-weight: bold;
 }
 
 .bg-button {
       width: 40px;
-      height: 32px;
+      height: 38px;
       padding: 0px;
       margin: 1px;
       border: 1px solid #666666;
-      font-size: 0.9rem;
-}
-
-#background-button-wrapper {
-      display: flex;
-      flex-wrap: wrap;
+      font-size: 1rem;
+      font-family: monospace;
+      font-weight: bold;
 }
 
 .terminal {
@@ -80,10 +77,15 @@ footer {
 
 #picker-wrapper {
       display: grid;
-      grid-template-columns: 28% 44% 28%;
+      grid-template-columns: 44% 28% 28%;
 }
 
 #terminal-wrapper {
       margin: 0;
       padding: 0;
 }
+
+/* #background-button-wrapper { */
+/*       display: flex; */
+/*       flex-wrap: wrap; */
+/* } */

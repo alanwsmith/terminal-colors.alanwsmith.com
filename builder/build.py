@@ -29,7 +29,7 @@ class Builder():
                     data-number="{line_parts[0]}"
                     data-name="{line_parts[1]}"
                     data-hex="{line_parts[2]}"
-                    ></button>"""
+                    >&nbsp;</button>"""
                 )
                 foreground_strings.append(
                     f"""<button
