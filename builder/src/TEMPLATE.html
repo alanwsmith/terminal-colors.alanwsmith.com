@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terminal Color Picker</title>
+    <title>Alan's Terminal Color Picker</title>
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Terminal Color Picker" />
+    <meta property="og:title" content="Alan's Terminal Color Picker" />
     <meta
       property="og:description"
       content="A color picker that shows you background and foreground on the same line so you can see how things will really look"
@@ -29,72 +29,102 @@
       href="/favicons/180x180.png"
     />
 
+    $HEAD
+
     <style>
-      body {
-        background-color: #000000;
-        color: #b8c1ec;
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        color: #fffffe;
-      }
-      a {
-        text-decoration: none;
-      }
-      header {
-        padding-top: 18px;
-        padding-bottom: 4px;
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-        border-bottom: 1px solid #888;
-      }
-      main {
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-      }
-      footer {
-        width: 100%;
-        max-width: 72ch;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 60px;
-        padding-bottom: 12px;
-        font-size: 0.9rem;
-      }
+      *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+      $BACKGROUND_STYLES
+      $CSS
     </style>
     <script>
-      const kickoff = () => {}
-      document.addEventListener('DOMContentLoaded', kickoff)
+      $JS
     </script>
   </head>
   <body>
     <header>
-      <a href="/">Home</a> ~
       <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
       <a href="https://links.alanwsmith.com">links</a> ~
-      <a href="https://podcast.alanwsmith.com/">podcast</a>
+      <a href="https://podcast.alanwsmith.com/">podcast</a> ~
+      <a href="https://twitter.com/TheIdOfAlan">twitter</a>
     </header>
     <main>
-      <h1>Terminal Color Picker</h1>
-      $CONTENT
+      <h1>ALAN'S TERMINAL COLOR PICKER</h1>
+
+      $BODY
+
+      <div id="picker-wrapper">
+        <div id="terminal-wrapper">
+          <pre
+            id="terminal-0"
+            class="terminal"
+          ><code id="the-text-0"></code></pre>
+          <pre
+            id="terminal-1"
+            class="terminal"
+          ><code id="the-text-1"></code></pre>
+          <pre
+            id="terminal-2"
+            class="terminal"
+          ><code id="the-text-2"></code></pre>
+          <pre
+            id="terminal-3"
+            class="terminal"
+          ><code id="the-text-3"></code></pre>
+          <pre
+            id="terminal-4"
+            class="terminal"
+          ><code id="the-text-4"></code></pre>
+        </div>
+        <div>$FOREGROUND_STRINGS</div>
+        <div>$BACKGROUND_BUTTONS</div>
+      </div>
+      <div id="post-text">
+        <h4>DETAILS</h4>
+        <ul id="details">
+          <li>
+            Clicking the colored numbers changes the text in the mock terminal
+            windows. Clicking the colors boxes changes the background
+          </li>
+          <li>The specific colors are the 256 terminal defaults</li>
+          <li>
+            Changing colors updates the first two lines of the mock terminals to
+            provide the color codes. You can grab them from there
+          </li>
+          <li>
+            The first number in the output lines is the 0-255 color id. It's
+            what you can use if you want to
+            <a
+              href="https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/"
+              >change your terminal via dotfiles</a
+            >
+          </li>
+          <li>
+            If you're wondering how useful this is given that themes and
+            terminals with zillions of colors are a thing, the answer is
+            &quot;not particually, until it is&quot;. For example...
+          </li>
+          <li>
+            This entire thing came about because I started using
+            <a href="https://github.com/tmux/tmux/wiki">tmux</a> and wanted to
+            change the color of the status bar. I found out how to do that from
+            <a href="https://unix.stackexchange.com/a/60969/21930">here</a>.
+            And, you guessed it, you need to use the 0-255 number ids. Eight
+            hours later and we ened up here
+          </li>
+          <li>
+            And, yes. I really built this just to pick colors for the tmux
+            status bar
+          </li>
+        </ul>
+      </div>
     </main>
     <footer>
+      color233 and color25 btw<br />
       made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
       <br />
       who has a <a href="https://www.alanwsmith.com">website</a> and a
       <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
-      among other <a href="https://links.alanwsmith.com">things</a>
+      among <a href="https://links.alanwsmith.com">other things</a>
     </footer>
   </body>
 </html>

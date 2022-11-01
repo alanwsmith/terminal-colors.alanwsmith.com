@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
+import json
 import os
 
+from datetime import datetime
 from string import Template
 
 class Builder():
@@ -10,13 +12,68 @@ class Builder():
         self.source_root = f"{self.project_root}/builder/src"
         self.site_root = f"{self.project_root}/site"
         self.parts = {}
+        self.colors = []
+
+    def get_colors(self):
+        with open(f"{self.source_root}/colors.txt") as _colors:
+            background_buttons = []
+            background_styles = []
+            foreground_strings = []
+
+            for line in _colors.readlines():
+                line_parts = line.strip().split("\t")
+                background_buttons.append(
+                    f"""<button 
+                    id="bg-code--{line_parts[0]}" 
+                    class="bg-button"
+                    data-number="{line_parts[0]}"
+                    data-name="{line_parts[1]}"
+                    data-hex="{line_parts[2]}"
+                    >&nbsp;</button>"""
+                )
+                foreground_strings.append(
+                    f"""<button
+                    id="fg-code--{line_parts[0]}" 
+                    class="fg-button"
+                    style="color: {line_parts[2]};"
+                    data-number="{line_parts[0]}"
+                    data-name="{line_parts[1]}"
+                    data-hex="{line_parts[2]}"
+                    >{line_parts[0].rjust(3, 'x').replace('x', '&nbsp;')}</button>"""
+                )
+
+                background_styles.append(
+                    "#bg-code--" + line_parts[0] + " { " +
+                    "background-color: " + line_parts[2] +
+                    " }\n"
+                )
+
+                self.colors.append({
+                    "number": line_parts[0],
+                    "name": line_parts[1],
+                    "hex": line_parts[2]
+                })
+
+
+            # Adjust to the more natural order:
+            background_styles = background_styles[16:] + background_styles[:16]
+            background_buttons = background_buttons[16:] + background_buttons[:16]
+            foreground_strings = foreground_strings[16:] + foreground_strings[:16]
+
+
+            self.parts['BACKGROUND_STYLES'] = "".join(background_styles)
+            self.parts['BACKGROUND_BUTTONS'] = "".join(background_buttons)
+            self.parts['FOREGROUND_STRINGS'] = "".join(foreground_strings)
+
 
     def load_template(self):
         with open(f"{self.source_root}/TEMPLATE.html") as _template:
             self.template = _template.read()
 
-    def load_content(self):
-        self.parts['CONTENT'] = "the quick brown fox"
+    def build_content(self):
+        # Make dynamic content here
+        # self.parts['CONTENT'] = "the quick brown fox"
+        pass
 
     def load_parts(self):
         for file_part in self.file_parts:
@@ -36,17 +93,17 @@ class Builder():
                     template.substitute(data)
                 )
 
-
 if __name__ == "__main__":
     b = Builder()
+    b.get_colors()
     b.load_template()
-    b.file_parts = ['CSS.css', 'JS.js']
+    b.file_parts = ['HEAD.html', 'BODY.html', 'CSS.css', 'JS.js']
     b.load_parts()
-    b.load_content()
+    b.build_content()
     b.make_page(
         f"{b.source_root}/TEMPLATE.html",
         f"{b.site_root}/index.html",
         b.parts
     )
 
-    print("HERE")
+    print(f"## Completed Build: {datetime.now()}")

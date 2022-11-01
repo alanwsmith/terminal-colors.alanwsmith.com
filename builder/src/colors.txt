@@ -1,4 +1,3 @@
-Xterm Number	Xterm Name	HEX
 0	Black (SYSTEM)	#000000
 1	Maroon (SYSTEM)	#800000
 2	Green (SYSTEM)	#008000

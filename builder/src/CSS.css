@@ -1,4 +1,113 @@
+:root {
+      --li-color: red;
+}
+
 body {
-  background-color: #000000;
-  color: #123433;
+      background-color: hsla(88, 0%, 7%, 1);
+      color: hsla(100, 0%, 80%, 1);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      font-family: 'PT Mono', monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+      color: hsla(198, 0%, 85%, 1);
+}
+
+header {
+      padding-top: 18px;
+      padding-bottom: 4px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-bottom: 1px solid #888;
+}
+main {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+}
+footer {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 60px;
+      padding-bottom: 12px;
+      font-size: 0.9rem;
+}
+
+.fg-button {
+      width: 40px;
+      height: 38px;
+      padding: 0px;
+      margin: 0px;
+      border: 1px solid #444;
+      background-color: hsla(88, 0%, 1%, 1);
+      font-size: 1rem;
+      font-family: monospace;
+      font-weight: bold;
+}
+
+.bg-button {
+      width: 40px;
+      height: 38px;
+      padding: 0px;
+      margin: 0px;
+      border: 1px solid #444;
+      font-size: 1rem;
+      font-family: monospace;
+      font-weight: bold;
+}
+
+.terminal {
+      border-radius: 6px;
+      padding: 10px;
+      background-color: black;
+      margin-right: 10px;
+      margin-bottom: 38px;
+      margin-top: 0px;
+}
+
+#picker-wrapper {
+      display: grid;
+      grid-template-columns: 44% 28% 28%;
+      margin-top: 34px;
+}
+
+#terminal-wrapper {
+      margin: 0;
+      padding: 0;
+}
+
+p {
+      max-width: 65ch;
+      margin-bottom: 18px;
+}
+
+li {
+      max-width: 65ch;
+      margin-bottom: 25px;
+}
+
+h1 {
+      margin-top: 14px;
+      margin-bottom: 12px;
+}
+
+a {
+      color: hsla(157, 21%, 40%, 1);
+      text-decoration: none;
+      font-weight: bold;
+}
+
+#details li::marker {
+      color: var(--li-color);
 }
