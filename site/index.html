@@ -296,7 +296,11 @@
 #bg-code--14 { background-color: #00ffff }
 #bg-code--15 { background-color: #ffffff }
 
-      body {
+      :root {
+      --li-color: red;
+}
+
+body {
       background-color: hsla(88, 0%, 7%, 1);
       color: hsla(100, 0%, 80%, 1);
       margin: 0;
@@ -362,8 +366,8 @@ footer {
 }
 
 .terminal {
-      border-radius: 10px;
-      padding: 6px;
+      border-radius: 6px;
+      padding: 10px;
       background-color: black;
       margin-right: 10px;
       margin-bottom: 38px;
@@ -397,8 +401,13 @@ h1 {
 }
 
 a {
-      color: hsla(157, 0%, 55%, 1);
+      color: hsla(157, 21%, 40%, 1);
       text-decoration: none;
+      font-weight: bold;
+}
+
+#details li::marker {
+      color: var(--li-color);
 }
 
     </style>
@@ -508,23 +517,34 @@ The plush chair leaned against the wall.
     const detailsBlock = `BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
 FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
 
+    const changeBorderNumbers = [
+        '255',
+        '254',
+        '253',
+        '252',
+        '251',
+        '250',
+        '249',
+        '248',
+        '247',
+        '246',
+    ]
+
     newTextBlocks.forEach((block, blockIndex) => {
         block = block.replaceAll(/DETAILS/g, detailsBlock)
         const theTerminal = document.getElementById(`terminal-${blockIndex}`)
-        console.log(theTerminal)
+        // console.log(theTerminal)
         const theText = document.getElementById(`the-text-${blockIndex}`)
-
         theTerminal.style.backgroundColor = colors.bg.hex
         theTerminal.style.color = colors.fg.hex
         theText.innerText = block
-
-        console.log(blockIndex)
+        if (changeBorderNumbers.includes(colors.bg.number)) {
+            theTerminal.style.border = '1px solid black'
+        } else {
+            theTerminal.style.border = '1px solid #bbbbbb'
+        }
+        console.log(colors.bg)
     })
-
-    // document.getElementById('terminal').style.backgroundColor = colors.bg.hex
-    // document.getElementById('terminal').style.color = colors.fg.hex
-
-    // console.log(colors)
 }
 
 const handleBgButtonClick = (event) => {
@@ -3934,27 +3954,23 @@ document.addEventListener('DOMContentLoaded', init)
                     >&nbsp;</button></div>
       </div>
       <div id="post-text">
-        <h3>Details</h3>
-        <ul>
+        <h4>DETAILS</h4>
+        <ul id="details">
           <li>
-            Clicking the number buttons changes the text color in the mock
-            terminal windows. Clicking the color squares changes the background
+            Clicking the colored numbers changes the text in the mock terminal
+            windows. Clicking the colors boxes changes the background
+          </li>
+          <li>The specific colors are the 256 terminal defaults</li>
+          <li>
+            Changing colors updates the first two lines of the mock terminals to
+            provide the color codes
           </li>
           <li>
-            The specific colors are made up from the 256 available by default in
-            terminals
-          </li>
-          <li>
-            Changing either the text or background color updates the first two
-            lines of the mock terminals to provide the codes for the colors
-          </li>
-          <li>
-            The number on the buttons and the first number in the mock terminal
-            output lines is the 0-255 id for the color in the terminal. It's
+            The first number in the output lines is the 0-255 color id. It's
             what you can use if you want to
             <a
               href="https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/"
-              >change stuff in your terminal via dotfiles</a
+              >change your terminal via dotfiles</a
             >
           </li>
           <li>
@@ -3963,12 +3979,12 @@ document.addEventListener('DOMContentLoaded', init)
             &quot;not particually, until it is&quot;. For example...
           </li>
           <li>
-            This entire thing came about because I'm trying
+            This entire thing came about because I started using
             <a href="https://github.com/tmux/tmux/wiki">tmux</a> and wanted to
-            change the default bright green of the status bar at the bottom. I
-            found out how to do that from
-            <a href="https://unix.stackexchange.com/a/60969/21930">this post</a
-            >. And, you guessed it, you need an id for one of the 256
+            change the color of the status bar. I found out how to do that from
+            <a href="https://unix.stackexchange.com/a/60969/21930">here</a>.
+            And, you guessed it, you need to use the 0-255 number ids and then
+            we ended up here
           </li>
           <li>
             And, yes. I really built this just to pick colors for the tmux
@@ -3978,11 +3994,12 @@ document.addEventListener('DOMContentLoaded', init)
       </div>
     </main>
     <footer>
+      color233 and color25 btw<br />
       made by <a href="https://twitter.com/TheIdOfAlan">alan w. smith</a>
       <br />
       who has a <a href="https://www.alanwsmith.com">website</a> and a
       <a href="https://podcast.alanwsmith.com/">podcast</a> <br />
-      among other <a href="https://links.alanwsmith.com">things</a>
+      among <a href="https://links.alanwsmith.com">other things</a>
     </footer>
   </body>
 </html>

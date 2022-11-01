@@ -103,23 +103,34 @@ The plush chair leaned against the wall.
     const detailsBlock = `BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
 FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
 
+    const changeBorderNumbers = [
+        '255',
+        '254',
+        '253',
+        '252',
+        '251',
+        '250',
+        '249',
+        '248',
+        '247',
+        '246',
+    ]
+
     newTextBlocks.forEach((block, blockIndex) => {
         block = block.replaceAll(/DETAILS/g, detailsBlock)
         const theTerminal = document.getElementById(`terminal-${blockIndex}`)
-        console.log(theTerminal)
+        // console.log(theTerminal)
         const theText = document.getElementById(`the-text-${blockIndex}`)
-
         theTerminal.style.backgroundColor = colors.bg.hex
         theTerminal.style.color = colors.fg.hex
         theText.innerText = block
-
-        console.log(blockIndex)
+        if (changeBorderNumbers.includes(colors.bg.number)) {
+            theTerminal.style.border = '1px solid black'
+        } else {
+            theTerminal.style.border = '1px solid #bbbbbb'
+        }
+        console.log(colors.bg)
     })
-
-    // document.getElementById('terminal').style.backgroundColor = colors.bg.hex
-    // document.getElementById('terminal').style.color = colors.fg.hex
-
-    // console.log(colors)
 }
 
 const handleBgButtonClick = (event) => {
