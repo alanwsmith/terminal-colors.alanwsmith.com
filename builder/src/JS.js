@@ -116,6 +116,8 @@ FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
         '246',
     ]
 
+    document.documentElement.style.setProperty('--li-color', colors.fg.hex)
+
     newTextBlocks.forEach((block, blockIndex) => {
         block = block.replaceAll(/DETAILS/g, detailsBlock)
         const theTerminal = document.getElementById(`terminal-${blockIndex}`)
@@ -129,7 +131,7 @@ FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
         } else {
             theTerminal.style.border = '1px solid #bbbbbb'
         }
-        console.log(colors.bg)
+        // console.log(colors.bg)
     })
 }
 

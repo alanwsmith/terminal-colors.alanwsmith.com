@@ -530,6 +530,8 @@ FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
         '246',
     ]
 
+    document.documentElement.style.setProperty('--li-color', colors.fg.hex)
+
     newTextBlocks.forEach((block, blockIndex) => {
         block = block.replaceAll(/DETAILS/g, detailsBlock)
         const theTerminal = document.getElementById(`terminal-${blockIndex}`)
@@ -543,7 +545,7 @@ FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
         } else {
             theTerminal.style.border = '1px solid #bbbbbb'
         }
-        console.log(colors.bg)
+        // console.log(colors.bg)
     })
 }
 
@@ -3963,7 +3965,7 @@ document.addEventListener('DOMContentLoaded', init)
           <li>The specific colors are the 256 terminal defaults</li>
           <li>
             Changing colors updates the first two lines of the mock terminals to
-            provide the color codes
+            provide the color codes. You can grab them from there
           </li>
           <li>
             The first number in the output lines is the 0-255 color id. It's
@@ -3983,8 +3985,8 @@ document.addEventListener('DOMContentLoaded', init)
             <a href="https://github.com/tmux/tmux/wiki">tmux</a> and wanted to
             change the color of the status bar. I found out how to do that from
             <a href="https://unix.stackexchange.com/a/60969/21930">here</a>.
-            And, you guessed it, you need to use the 0-255 number ids and then
-            we ended up here
+            And, you guessed it, you need to use the 0-255 number ids. Eight
+            hours later and we ened up here
           </li>
           <li>
             And, yes. I really built this just to pick colors for the tmux
