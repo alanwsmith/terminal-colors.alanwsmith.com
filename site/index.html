@@ -28,28 +28,18 @@
       sizes="180x180"
       href="/favicons/180x180.png"
     />
-    <style>
-      /*
-            *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
-            */
-                  #bg-code--0 { background-color: #000000 }
-#bg-code--1 { background-color: #800000 }
-#bg-code--2 { background-color: #008000 }
-#bg-code--3 { background-color: #808000 }
-#bg-code--4 { background-color: #000080 }
-#bg-code--5 { background-color: #800080 }
-#bg-code--6 { background-color: #008080 }
-#bg-code--7 { background-color: #c0c0c0 }
-#bg-code--8 { background-color: #808080 }
-#bg-code--9 { background-color: #ff0000 }
-#bg-code--10 { background-color: #00ff00 }
-#bg-code--11 { background-color: #ffff00 }
-#bg-code--12 { background-color: #0000ff }
-#bg-code--13 { background-color: #ff00ff }
-#bg-code--14 { background-color: #00ffff }
-#bg-code--15 { background-color: #ffffff }
-#bg-code--16 { background-color: #000000 }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+  rel="stylesheet"
+/>
+
+
+    <style>
+      *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+      #bg-code--16 { background-color: #000000 }
 #bg-code--17 { background-color: #00005f }
 #bg-code--18 { background-color: #000087 }
 #bg-code--19 { background-color: #0000af }
@@ -289,15 +279,32 @@
 #bg-code--253 { background-color: #dadada }
 #bg-code--254 { background-color: #e4e4e4 }
 #bg-code--255 { background-color: #eeeeee }
+#bg-code--0 { background-color: #000000 }
+#bg-code--1 { background-color: #800000 }
+#bg-code--2 { background-color: #008000 }
+#bg-code--3 { background-color: #808000 }
+#bg-code--4 { background-color: #000080 }
+#bg-code--5 { background-color: #800080 }
+#bg-code--6 { background-color: #008080 }
+#bg-code--7 { background-color: #c0c0c0 }
+#bg-code--8 { background-color: #808080 }
+#bg-code--9 { background-color: #ff0000 }
+#bg-code--10 { background-color: #00ff00 }
+#bg-code--11 { background-color: #ffff00 }
+#bg-code--12 { background-color: #0000ff }
+#bg-code--13 { background-color: #ff00ff }
+#bg-code--14 { background-color: #00ffff }
+#bg-code--15 { background-color: #ffffff }
 
-                        body {
-      background-color: #333;
-      color: #123433;
+      body {
+      background-color: hsla(88, 0%, 7%, 1);
+      color: hsla(100, 0%, 80%, 1);
       margin: 0;
       padding: 0;
       min-height: 100vh;
       display: grid;
       grid-template-rows: auto 1fr auto;
+      font-family: 'PT Mono', monospace;
 }
 h1,
 h2,
@@ -305,10 +312,7 @@ h3,
 h4,
 h5,
 h6 {
-      color: #fffffe;
-}
-a {
-      text-decoration: none;
+      color: hsla(198, 0%, 85%, 1);
 }
 
 header {
@@ -338,9 +342,9 @@ footer {
       width: 40px;
       height: 38px;
       padding: 0px;
-      margin: 1px;
-      border: 1px solid #111;
-      background-color: #2c2c2c;
+      margin: 0px;
+      border: 1px solid #444;
+      background-color: hsla(88, 0%, 1%, 1);
       font-size: 1rem;
       font-family: monospace;
       font-weight: bold;
@@ -350,8 +354,8 @@ footer {
       width: 40px;
       height: 38px;
       padding: 0px;
-      margin: 1px;
-      border: 1px solid #666666;
+      margin: 0px;
+      border: 1px solid #444;
       font-size: 1rem;
       font-family: monospace;
       font-weight: bold;
@@ -361,15 +365,15 @@ footer {
       border-radius: 10px;
       padding: 6px;
       background-color: black;
-      margin-left: 10px;
       margin-right: 10px;
-      margin-bottom: 42px;
-      margin-top: 2px;
+      margin-bottom: 38px;
+      margin-top: 0px;
 }
 
 #picker-wrapper {
       display: grid;
       grid-template-columns: 44% 28% 28%;
+      margin-top: 34px;
 }
 
 #terminal-wrapper {
@@ -377,10 +381,25 @@ footer {
       padding: 0;
 }
 
-/* #background-button-wrapper { */
-/*       display: flex; */
-/*       flex-wrap: wrap; */
-/* } */
+p {
+      max-width: 65ch;
+      margin-bottom: 18px;
+}
+
+li {
+      max-width: 65ch;
+      margin-bottom: 25px;
+}
+
+h1 {
+      margin-top: 14px;
+      margin-bottom: 12px;
+}
+
+a {
+      color: hsla(157, 0%, 55%, 1);
+      text-decoration: none;
+}
 
     </style>
     <script>
@@ -469,8 +488,9 @@ The node on the stalk of wheat grew daily.
 The heap of fallen leaves was set on fire.
 Write fast, if you want to finish early.
 >`,
+    ]
 
-        `DETAILS
+    const holding = `DETAILS
 
 The last switch cannot be turned off.
 The rise to fame of a person takes luck.
@@ -478,12 +498,12 @@ The rise to fame of a person takes luck.
 The purple tie was ten years old.
 Pack the records in a neat thin case.
 
+The crunch of feet in the snow was the only sound.
 The copper bowl shone in the sun's rays.
 
 Boards will warp unless kept dry.
 The plush chair leaned against the wall.
->`,
-    ]
+>`
 
     const detailsBlock = `BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
 FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`
@@ -539,17 +559,25 @@ document.addEventListener('DOMContentLoaded', init)
   </head>
   <body>
     <header>
-      <a href="/">Home</a> ~
       <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
       <a href="https://links.alanwsmith.com">links</a> ~
-      <a href="https://podcast.alanwsmith.com/">podcast</a>
+      <a href="https://podcast.alanwsmith.com/">podcast</a> ~
+      <a href="https://twitter.com/TheIdOfAlan">twitter</a>
     </header>
     <main>
-      <h1>Alan's Terminal Color Picker</h1>
+      <h1>ALAN'S TERMINAL COLOR PICKER</h1>
+
       <p>
-  GOAL: Make a color picker for terminals that shows both the forground and
-  background colors
+  I can never tell from swatches how colors will look full size. Doubly so with
+  combinations like text on a background. So, I built this to make it easier to
+  pick terminal colors.
 </p>
+
+<p>
+  Click some squares and numbers to change things up then scroll to the bottom
+  if you'd like more details.
+</p>
+
 
       <div id="picker-wrapper">
         <div id="terminal-wrapper">
@@ -573,124 +601,8 @@ document.addEventListener('DOMContentLoaded', init)
             id="terminal-4"
             class="terminal"
           ><code id="the-text-4"></code></pre>
-          <pre
-            id="terminal-5"
-            class="terminal"
-          ><code id="the-text-5"></code></pre>
         </div>
         <div><button
-                    id="fg-code--0" 
-                    class="fg-button"
-                    style="color: #000000;"
-                    data-number="0"
-                    data-name="Black (SYSTEM)"
-                    data-hex="#000000"
-                    >&nbsp;&nbsp;0</button><button
-                    id="fg-code--1" 
-                    class="fg-button"
-                    style="color: #800000;"
-                    data-number="1"
-                    data-name="Maroon (SYSTEM)"
-                    data-hex="#800000"
-                    >&nbsp;&nbsp;1</button><button
-                    id="fg-code--2" 
-                    class="fg-button"
-                    style="color: #008000;"
-                    data-number="2"
-                    data-name="Green (SYSTEM)"
-                    data-hex="#008000"
-                    >&nbsp;&nbsp;2</button><button
-                    id="fg-code--3" 
-                    class="fg-button"
-                    style="color: #808000;"
-                    data-number="3"
-                    data-name="Olive (SYSTEM)"
-                    data-hex="#808000"
-                    >&nbsp;&nbsp;3</button><button
-                    id="fg-code--4" 
-                    class="fg-button"
-                    style="color: #000080;"
-                    data-number="4"
-                    data-name="Navy (SYSTEM)"
-                    data-hex="#000080"
-                    >&nbsp;&nbsp;4</button><button
-                    id="fg-code--5" 
-                    class="fg-button"
-                    style="color: #800080;"
-                    data-number="5"
-                    data-name="Purple (SYSTEM)"
-                    data-hex="#800080"
-                    >&nbsp;&nbsp;5</button><button
-                    id="fg-code--6" 
-                    class="fg-button"
-                    style="color: #008080;"
-                    data-number="6"
-                    data-name="Teal (SYSTEM)"
-                    data-hex="#008080"
-                    >&nbsp;&nbsp;6</button><button
-                    id="fg-code--7" 
-                    class="fg-button"
-                    style="color: #c0c0c0;"
-                    data-number="7"
-                    data-name="Silver (SYSTEM)"
-                    data-hex="#c0c0c0"
-                    >&nbsp;&nbsp;7</button><button
-                    id="fg-code--8" 
-                    class="fg-button"
-                    style="color: #808080;"
-                    data-number="8"
-                    data-name="Grey (SYSTEM)"
-                    data-hex="#808080"
-                    >&nbsp;&nbsp;8</button><button
-                    id="fg-code--9" 
-                    class="fg-button"
-                    style="color: #ff0000;"
-                    data-number="9"
-                    data-name="Red (SYSTEM)"
-                    data-hex="#ff0000"
-                    >&nbsp;&nbsp;9</button><button
-                    id="fg-code--10" 
-                    class="fg-button"
-                    style="color: #00ff00;"
-                    data-number="10"
-                    data-name="Lime (SYSTEM)"
-                    data-hex="#00ff00"
-                    >&nbsp;10</button><button
-                    id="fg-code--11" 
-                    class="fg-button"
-                    style="color: #ffff00;"
-                    data-number="11"
-                    data-name="Yellow (SYSTEM)"
-                    data-hex="#ffff00"
-                    >&nbsp;11</button><button
-                    id="fg-code--12" 
-                    class="fg-button"
-                    style="color: #0000ff;"
-                    data-number="12"
-                    data-name="Blue (SYSTEM)"
-                    data-hex="#0000ff"
-                    >&nbsp;12</button><button
-                    id="fg-code--13" 
-                    class="fg-button"
-                    style="color: #ff00ff;"
-                    data-number="13"
-                    data-name="Fuchsia (SYSTEM)"
-                    data-hex="#ff00ff"
-                    >&nbsp;13</button><button
-                    id="fg-code--14" 
-                    class="fg-button"
-                    style="color: #00ffff;"
-                    data-number="14"
-                    data-name="Aqua (SYSTEM)"
-                    data-hex="#00ffff"
-                    >&nbsp;14</button><button
-                    id="fg-code--15" 
-                    class="fg-button"
-                    style="color: #ffffff;"
-                    data-number="15"
-                    data-name="White (SYSTEM)"
-                    data-hex="#ffffff"
-                    >&nbsp;15</button><button
                     id="fg-code--16" 
                     class="fg-button"
                     style="color: #000000;"
@@ -2370,104 +2282,120 @@ document.addEventListener('DOMContentLoaded', init)
                     data-number="255"
                     data-name="Grey93"
                     data-hex="#eeeeee"
-                    >255</button></div>
-        <div><button 
-                    id="bg-code--0" 
-                    class="bg-button"
+                    >255</button><button
+                    id="fg-code--0" 
+                    class="fg-button"
+                    style="color: #000000;"
                     data-number="0"
                     data-name="Black (SYSTEM)"
                     data-hex="#000000"
-                    >&nbsp;</button><button 
-                    id="bg-code--1" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;0</button><button
+                    id="fg-code--1" 
+                    class="fg-button"
+                    style="color: #800000;"
                     data-number="1"
                     data-name="Maroon (SYSTEM)"
                     data-hex="#800000"
-                    >&nbsp;</button><button 
-                    id="bg-code--2" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;1</button><button
+                    id="fg-code--2" 
+                    class="fg-button"
+                    style="color: #008000;"
                     data-number="2"
                     data-name="Green (SYSTEM)"
                     data-hex="#008000"
-                    >&nbsp;</button><button 
-                    id="bg-code--3" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;2</button><button
+                    id="fg-code--3" 
+                    class="fg-button"
+                    style="color: #808000;"
                     data-number="3"
                     data-name="Olive (SYSTEM)"
                     data-hex="#808000"
-                    >&nbsp;</button><button 
-                    id="bg-code--4" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;3</button><button
+                    id="fg-code--4" 
+                    class="fg-button"
+                    style="color: #000080;"
                     data-number="4"
                     data-name="Navy (SYSTEM)"
                     data-hex="#000080"
-                    >&nbsp;</button><button 
-                    id="bg-code--5" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;4</button><button
+                    id="fg-code--5" 
+                    class="fg-button"
+                    style="color: #800080;"
                     data-number="5"
                     data-name="Purple (SYSTEM)"
                     data-hex="#800080"
-                    >&nbsp;</button><button 
-                    id="bg-code--6" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;5</button><button
+                    id="fg-code--6" 
+                    class="fg-button"
+                    style="color: #008080;"
                     data-number="6"
                     data-name="Teal (SYSTEM)"
                     data-hex="#008080"
-                    >&nbsp;</button><button 
-                    id="bg-code--7" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;6</button><button
+                    id="fg-code--7" 
+                    class="fg-button"
+                    style="color: #c0c0c0;"
                     data-number="7"
                     data-name="Silver (SYSTEM)"
                     data-hex="#c0c0c0"
-                    >&nbsp;</button><button 
-                    id="bg-code--8" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;7</button><button
+                    id="fg-code--8" 
+                    class="fg-button"
+                    style="color: #808080;"
                     data-number="8"
                     data-name="Grey (SYSTEM)"
                     data-hex="#808080"
-                    >&nbsp;</button><button 
-                    id="bg-code--9" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;8</button><button
+                    id="fg-code--9" 
+                    class="fg-button"
+                    style="color: #ff0000;"
                     data-number="9"
                     data-name="Red (SYSTEM)"
                     data-hex="#ff0000"
-                    >&nbsp;</button><button 
-                    id="bg-code--10" 
-                    class="bg-button"
+                    >&nbsp;&nbsp;9</button><button
+                    id="fg-code--10" 
+                    class="fg-button"
+                    style="color: #00ff00;"
                     data-number="10"
                     data-name="Lime (SYSTEM)"
                     data-hex="#00ff00"
-                    >&nbsp;</button><button 
-                    id="bg-code--11" 
-                    class="bg-button"
+                    >&nbsp;10</button><button
+                    id="fg-code--11" 
+                    class="fg-button"
+                    style="color: #ffff00;"
                     data-number="11"
                     data-name="Yellow (SYSTEM)"
                     data-hex="#ffff00"
-                    >&nbsp;</button><button 
-                    id="bg-code--12" 
-                    class="bg-button"
+                    >&nbsp;11</button><button
+                    id="fg-code--12" 
+                    class="fg-button"
+                    style="color: #0000ff;"
                     data-number="12"
                     data-name="Blue (SYSTEM)"
                     data-hex="#0000ff"
-                    >&nbsp;</button><button 
-                    id="bg-code--13" 
-                    class="bg-button"
+                    >&nbsp;12</button><button
+                    id="fg-code--13" 
+                    class="fg-button"
+                    style="color: #ff00ff;"
                     data-number="13"
                     data-name="Fuchsia (SYSTEM)"
                     data-hex="#ff00ff"
-                    >&nbsp;</button><button 
-                    id="bg-code--14" 
-                    class="bg-button"
+                    >&nbsp;13</button><button
+                    id="fg-code--14" 
+                    class="fg-button"
+                    style="color: #00ffff;"
                     data-number="14"
                     data-name="Aqua (SYSTEM)"
                     data-hex="#00ffff"
-                    >&nbsp;</button><button 
-                    id="bg-code--15" 
-                    class="bg-button"
+                    >&nbsp;14</button><button
+                    id="fg-code--15" 
+                    class="fg-button"
+                    style="color: #ffffff;"
                     data-number="15"
                     data-name="White (SYSTEM)"
                     data-hex="#ffffff"
-                    >&nbsp;</button><button 
+                    >&nbsp;15</button></div>
+        <div><button 
                     id="bg-code--16" 
                     class="bg-button"
                     data-number="16"
@@ -3907,7 +3835,146 @@ document.addEventListener('DOMContentLoaded', init)
                     data-number="255"
                     data-name="Grey93"
                     data-hex="#eeeeee"
+                    >&nbsp;</button><button 
+                    id="bg-code--0" 
+                    class="bg-button"
+                    data-number="0"
+                    data-name="Black (SYSTEM)"
+                    data-hex="#000000"
+                    >&nbsp;</button><button 
+                    id="bg-code--1" 
+                    class="bg-button"
+                    data-number="1"
+                    data-name="Maroon (SYSTEM)"
+                    data-hex="#800000"
+                    >&nbsp;</button><button 
+                    id="bg-code--2" 
+                    class="bg-button"
+                    data-number="2"
+                    data-name="Green (SYSTEM)"
+                    data-hex="#008000"
+                    >&nbsp;</button><button 
+                    id="bg-code--3" 
+                    class="bg-button"
+                    data-number="3"
+                    data-name="Olive (SYSTEM)"
+                    data-hex="#808000"
+                    >&nbsp;</button><button 
+                    id="bg-code--4" 
+                    class="bg-button"
+                    data-number="4"
+                    data-name="Navy (SYSTEM)"
+                    data-hex="#000080"
+                    >&nbsp;</button><button 
+                    id="bg-code--5" 
+                    class="bg-button"
+                    data-number="5"
+                    data-name="Purple (SYSTEM)"
+                    data-hex="#800080"
+                    >&nbsp;</button><button 
+                    id="bg-code--6" 
+                    class="bg-button"
+                    data-number="6"
+                    data-name="Teal (SYSTEM)"
+                    data-hex="#008080"
+                    >&nbsp;</button><button 
+                    id="bg-code--7" 
+                    class="bg-button"
+                    data-number="7"
+                    data-name="Silver (SYSTEM)"
+                    data-hex="#c0c0c0"
+                    >&nbsp;</button><button 
+                    id="bg-code--8" 
+                    class="bg-button"
+                    data-number="8"
+                    data-name="Grey (SYSTEM)"
+                    data-hex="#808080"
+                    >&nbsp;</button><button 
+                    id="bg-code--9" 
+                    class="bg-button"
+                    data-number="9"
+                    data-name="Red (SYSTEM)"
+                    data-hex="#ff0000"
+                    >&nbsp;</button><button 
+                    id="bg-code--10" 
+                    class="bg-button"
+                    data-number="10"
+                    data-name="Lime (SYSTEM)"
+                    data-hex="#00ff00"
+                    >&nbsp;</button><button 
+                    id="bg-code--11" 
+                    class="bg-button"
+                    data-number="11"
+                    data-name="Yellow (SYSTEM)"
+                    data-hex="#ffff00"
+                    >&nbsp;</button><button 
+                    id="bg-code--12" 
+                    class="bg-button"
+                    data-number="12"
+                    data-name="Blue (SYSTEM)"
+                    data-hex="#0000ff"
+                    >&nbsp;</button><button 
+                    id="bg-code--13" 
+                    class="bg-button"
+                    data-number="13"
+                    data-name="Fuchsia (SYSTEM)"
+                    data-hex="#ff00ff"
+                    >&nbsp;</button><button 
+                    id="bg-code--14" 
+                    class="bg-button"
+                    data-number="14"
+                    data-name="Aqua (SYSTEM)"
+                    data-hex="#00ffff"
+                    >&nbsp;</button><button 
+                    id="bg-code--15" 
+                    class="bg-button"
+                    data-number="15"
+                    data-name="White (SYSTEM)"
+                    data-hex="#ffffff"
                     >&nbsp;</button></div>
+      </div>
+      <div id="post-text">
+        <h3>Details</h3>
+        <ul>
+          <li>
+            Clicking the number buttons changes the text color in the mock
+            terminal windows. Clicking the color squares changes the background
+          </li>
+          <li>
+            The specific colors are made up from the 256 available by default in
+            terminals
+          </li>
+          <li>
+            Changing either the text or background color updates the first two
+            lines of the mock terminals to provide the codes for the colors
+          </li>
+          <li>
+            The number on the buttons and the first number in the mock terminal
+            output lines is the 0-255 id for the color in the terminal. It's
+            what you can use if you want to
+            <a
+              href="https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/"
+              >change stuff in your terminal via dotfiles</a
+            >
+          </li>
+          <li>
+            If you're wondering how useful this is given that themes and
+            terminals with zillions of colors are a thing, the answer is
+            &quot;not particually, until it is&quot;. For example...
+          </li>
+          <li>
+            This entire thing came about because I'm trying
+            <a href="https://github.com/tmux/tmux/wiki">tmux</a> and wanted to
+            change the default bright green of the status bar at the bottom. I
+            found out how to do that from
+            <a href="https://unix.stackexchange.com/a/60969/21930">this post</a
+            >. And, you guessed it, you need an id for one of the 256
+          </li>
+          <li>
+            And, yes. I really built this just to pick colors for the tmux
+            status bar
+          </li>
+        </ul>
       </div>
     </main>
     <footer>

@@ -83,8 +83,9 @@ The node on the stalk of wheat grew daily.
 The heap of fallen leaves was set on fire.
 Write fast, if you want to finish early.
 >`,
+    ]
 
-        `DETAILS
+    const holding = `DETAILS
 
 The last switch cannot be turned off.
 The rise to fame of a person takes luck.
@@ -92,12 +93,12 @@ The rise to fame of a person takes luck.
 The purple tie was ten years old.
 Pack the records in a neat thin case.
 
+The crunch of feet in the snow was the only sound.
 The copper bowl shone in the sun's rays.
 
 Boards will warp unless kept dry.
 The plush chair leaned against the wall.
->`,
-    ]
+>`
 
     const detailsBlock = `BACKGROUND: ${colors.bg.number} - ${colors.bg.hex} - ${colors.bg.name}
 FOREGROUND: ${colors.fg.number} - ${colors.fg.hex} - ${colors.fg.name}`

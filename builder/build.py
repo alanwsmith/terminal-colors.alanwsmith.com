@@ -53,11 +53,16 @@ class Builder():
                     "name": line_parts[1],
                     "hex": line_parts[2]
                 })
-            # self.parts['COLORS'] = json.dumps(self.colors)
+
+
+            # Adjust to the more natural order:
+            background_styles = background_styles[16:] + background_styles[:16]
+            background_buttons = background_buttons[16:] + background_buttons[:16]
+            foreground_strings = foreground_strings[16:] + foreground_strings[:16]
+
 
             self.parts['BACKGROUND_STYLES'] = "".join(background_styles)
             self.parts['BACKGROUND_BUTTONS'] = "".join(background_buttons)
-
             self.parts['FOREGROUND_STRINGS'] = "".join(foreground_strings)
 
 

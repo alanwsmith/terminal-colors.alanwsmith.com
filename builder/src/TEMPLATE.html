@@ -28,13 +28,13 @@
       sizes="180x180"
       href="/favicons/180x180.png"
     />
-    <style>
-      /*
-            *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 
-            */
-                  $BACKGROUND_STYLES
-                        $CSS
+    $HEAD
+
+    <style>
+      *,*::before,*::after{box-sizing:border-box}body,h1,h2,h3,h4,p,figure,blockquote,dl,dd{margin:0}ul[role="list"],ol[role="list"]{list-style:none}html:focus-within{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}input,button,textarea,select{font:inherit}@media(prefers-reduced-motion:reduce){html:focus-within{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+      $BACKGROUND_STYLES
+      $CSS
     </style>
     <script>
       $JS
@@ -42,14 +42,16 @@
   </head>
   <body>
     <header>
-      <a href="/">Home</a> ~
       <a href="https://www.alanwsmith.com/">alanwsmith.com</a> ~
       <a href="https://links.alanwsmith.com">links</a> ~
-      <a href="https://podcast.alanwsmith.com/">podcast</a>
+      <a href="https://podcast.alanwsmith.com/">podcast</a> ~
+      <a href="https://twitter.com/TheIdOfAlan">twitter</a>
     </header>
     <main>
-      <h1>Alan's Terminal Color Picker</h1>
+      <h1>ALAN'S TERMINAL COLOR PICKER</h1>
+
       $BODY
+
       <div id="picker-wrapper">
         <div id="terminal-wrapper">
           <pre
@@ -72,13 +74,52 @@
             id="terminal-4"
             class="terminal"
           ><code id="the-text-4"></code></pre>
-          <pre
-            id="terminal-5"
-            class="terminal"
-          ><code id="the-text-5"></code></pre>
         </div>
         <div>$FOREGROUND_STRINGS</div>
         <div>$BACKGROUND_BUTTONS</div>
+      </div>
+      <div id="post-text">
+        <h3>Details</h3>
+        <ul>
+          <li>
+            Clicking the number buttons changes the text color in the mock
+            terminal windows. Clicking the color squares changes the background
+          </li>
+          <li>
+            The specific colors are made up from the 256 available by default in
+            terminals
+          </li>
+          <li>
+            Changing either the text or background color updates the first two
+            lines of the mock terminals to provide the codes for the colors
+          </li>
+          <li>
+            The number on the buttons and the first number in the mock terminal
+            output lines is the 0-255 id for the color in the terminal. It's
+            what you can use if you want to
+            <a
+              href="https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/"
+              >change stuff in your terminal via dotfiles</a
+            >
+          </li>
+          <li>
+            If you're wondering how useful this is given that themes and
+            terminals with zillions of colors are a thing, the answer is
+            &quot;not particually, until it is&quot;. For example...
+          </li>
+          <li>
+            This entire thing came about because I'm trying
+            <a href="https://github.com/tmux/tmux/wiki">tmux</a> and wanted to
+            change the default bright green of the status bar at the bottom. I
+            found out how to do that from
+            <a href="https://unix.stackexchange.com/a/60969/21930">this post</a
+            >. And, you guessed it, you need an id for one of the 256
+          </li>
+          <li>
+            And, yes. I really built this just to pick colors for the tmux
+            status bar
+          </li>
+        </ul>
       </div>
     </main>
     <footer>
